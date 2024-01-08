@@ -29,7 +29,8 @@ SQL Commands:
    - **ROLLBACK:** Undoes changes made during the current transaction, reverting the database to its state before the transaction started.
    - **SAVEPOINT:** Sets a point within a transaction to which you can later roll back, allowing for partial rollback of a transaction.
   
-   ```sql
+```sql
+
 # Create and use a database
 CREATE DATABASE ey_db;
 USE ey_db;
@@ -109,4 +110,4 @@ SELECT ods.*, ps.* FROM Orders ods JOIN Persons ps ON ods.PersonID = ps.PersonID
 SELECT ods.*, ps.* FROM Orders ods RIGHT JOIN Persons ps ON ods.PersonID = ps.PersonID;
 SELECT ods.*, ps.* FROM Orders ods LEFT JOIN Persons ps ON ods.PersonID = ps.PersonID;
 
-
+```
