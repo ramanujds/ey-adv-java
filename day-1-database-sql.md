@@ -110,4 +110,17 @@ SELECT ods.*, ps.* FROM Orders ods JOIN Persons ps ON ods.PersonID = ps.PersonID
 SELECT ods.*, ps.* FROM Orders ods RIGHT JOIN Persons ps ON ods.PersonID = ps.PersonID;
 SELECT ods.*, ps.* FROM Orders ods LEFT JOIN Persons ps ON ods.PersonID = ps.PersonID;
 
+## More Queries to write
+
+-- List the persons who have not placed any orders.
+
+-- Find the total number of orders placed by each person. Include the person's name and the order count.
+
+-- List the cities where persons have placed orders and the total number of orders for each city.
+
+-- Retrieve the details of persons who have placed orders for 'iPHONE 15'. 
+
+-- List the persons who have placed more than 2 orders.
+
+
 ```
