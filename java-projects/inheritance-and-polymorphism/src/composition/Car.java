@@ -1,13 +1,12 @@
 package composition;
 
 class Car {
-    Engine carEngine; // Composition (Has-A relationship)
+    Engine carEngine;
 
     String model;
     String color;
 
     Car() {
-        this.carEngine = new Engine(); // Creating an Engine object when Car is instantiated
     }
 
     public Car(Engine carEngine) {
@@ -21,7 +20,7 @@ class Car {
     }
 
     void startCar() {
-        carEngine.start(); // Delegating the start operation to the Engine object
+        carEngine.start();
         System.out.println("Car started");
     }
 
