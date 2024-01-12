@@ -148,4 +148,3 @@ public class JdbcExample {
   // Update, Delete similar structure
   ```
 
-These concise notes and examples cover the essential concepts of JDBC, from driver installation to CRUD operations. Adjust the code based on your specific database and requirements.
