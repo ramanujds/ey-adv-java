@@ -12,7 +12,7 @@ Web applications function through a client-server model. The client is the user'
 
 - **Server-Side (Backend):**
   - The server receives requests from clients and processes them.
-  - Server-side languages like Python, Ruby, Node.js, or PHP handle logic, database queries, and other backend tasks.
+  - Server-side languages like Java, Python, Ruby, Node.js, or PHP handle logic, database queries, and other backend tasks.
   - The server sends back HTML, CSS, and JavaScript to the client, along with any requested data.
 
 - **Database:**
