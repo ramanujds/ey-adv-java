@@ -8,9 +8,14 @@
 <body>
     <h1 id="messsage-container">Good Evening</h1>
     <input id="input-message" type="text" placeholder="Enter some text">
-    <button onclick="updateMessage()">Update Message</button>
+    <button onclick="updateMessage()" id="update-btn">Update Message</button>
 </body>
 <script>
+
+    let updateBtn = document.getElementById("update-btn");
+
+    updateBtn.style.backgroundColor="yellow";
+
     function updateMessage(){
         let message = document.getElementById("input-message").value;
         document.getElementById("messsage-container").innerHTML=message;

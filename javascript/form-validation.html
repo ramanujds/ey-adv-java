@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation Example</title>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <form id="myForm" method="POST" onsubmit="return validateForm(event)">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <br>
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email">
+
+    <br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+
+    <br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+
+</body>
+
+<script>
+function validateForm(event) {
+
+  event.preventDefault(); 
+
+  // Get form elements
+  let nameInput = document.getElementById('name');
+  let emailInput = document.getElementById('email');
+  let passwordInput = document.getElementById('password');
+
+  // Get values
+  let nameValue = nameInput.value.trim();
+  let emailValue = emailInput.value.trim();
+  let passwordValue = passwordInput.value.trim();
+
+  // Reset previous error messages
+  clearErrors();
+
+  // Validate name
+  if (nameValue === '') {
+    displayError(nameInput, 'Name is required');
+    return false;
+  }
+
+  // Validate email
+  if (!isValidEmail(emailValue)) {
+    displayError(emailInput, 'Invalid email address');
+    return false;
+  }
+
+  // Validate password
+  if (passwordValue.length < 6) {
+    displayError(passwordInput, 'Password must be at least 6 characters');
+    return false;
+  }
+
+  // If all validations pass, you can submit the form
+  alert('Form submitted successfully!');
+}
+
+function isValidEmail(email) {
+  // A simple email validation regex
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+function displayError(element, message) {
+ let errorDiv = document.createElement('div');
+  errorDiv.className = 'error';
+  errorDiv.textContent = message;
+
+  // Insert the error message after the input element
+  element.parentNode.insertBefore(errorDiv, element.nextSibling);
+}
+
+function clearErrors() {
+  let errorMessages = document.querySelectorAll('.error');
+  errorMessages.forEach(function (errorMessage) {
+    errorMessage.parentNode.removeChild(errorMessage);
+  });
+}
+</script>
+
+</html>

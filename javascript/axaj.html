@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <input type="text" placeholder="Enter username" id="usernametxt">
+        <button onclick="fetchUser()">Search</button>
+    </div>
+
+    <div>
+        <p>Name : <span id="username"></span></p>
+        <p>Location : <span id="location"></span></p>
+        <p>Public Repos : <span id="public_repos"></span></p>
+        <img src="" alt="" id="avatar" width="150px" height="150px">
+    </div>
+
+
+</body>
+
+<script>
+
+    function fetchUser() {
+
+        let username = document.getElementById("usernametxt").value;
+
+        fetch("https://api.github.com/users/" + username).then(response => response.json()).then(user => {
+
+            document.getElementById("username").innerHTML = user.name;
+            document.getElementById("location").innerHTML = user.location;
+            document.getElementById("public_repos").innerHTML = user.public_repos;
+            document.getElementById("avatar").src = user.avatar_url;
+            console.log(user)
+        })
+
+        console.log('Hello')
+    }
+
+
+</script>
+
+</html>
