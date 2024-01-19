@@ -198,3 +198,5 @@ public class SecondServlet extends HttpServlet {
   // In SecondServlet
   String sharedValue = (String) getServletContext().getAttribute("sharedData");
   ```
+
+![image](https://github.com/ramanujds/ey-adv-java/assets/42864715/8611460f-9d3b-4531-9809-87ec97fb4bb8)
