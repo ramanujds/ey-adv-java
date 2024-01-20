@@ -1,13 +1,8 @@
 package com.mywebapp.controller;
 
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.ServletRequest;
-import jakarta.servlet.ServletResponse;
+import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -30,9 +25,34 @@ public class MyFirstServlet extends HttpServlet {
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
         String name = req.getParameter("name");
-        RequestDispatcher rd = req.getRequestDispatcher("show.jsp");
-        req.setAttribute("username", name);
-        rd.forward(req, res);
+
+        // Forwarding request to another servlet
+//        RequestDispatcher rd = req.getRequestDispatcher("show.jsp");
+//        req.setAttribute("username", name);
+//        rd.forward(req, res);
+
+        // Redirecting request to another servlet or jsp
+
+//        res.sendRedirect("show.jsp?username="+name);
+
+        // Redirecting request to another servlet or jsp using cookies
+
+//        Cookie cookie = new Cookie("username", name);
+//        res.addCookie(cookie);
+//        res.sendRedirect("show.jsp");
+
+        // Redirecting request to another servlet or jsp using session
+
+//        HttpSession session = req.getSession();
+//        session.setAttribute("username", name);
+//        res.sendRedirect("show.jsp");
+
+        // ServletContext
+
+        ServletContext context = req.getServletContext();
+        context.setAttribute("username", name);
+        res.sendRedirect("show.jsp");
+
 
 
     }
