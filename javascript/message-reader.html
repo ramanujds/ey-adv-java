@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <button onclick="fetchMessage()">Search</button>
+    </div>
+
+    <div>
+        <p>Sender : <span id="sender"></span></p>
+        <p>Message : <span id="message"></span></p>
+        <p>Date : <span id="date"></span></p>
+        
+    </div>
+
+
+</body>
+
+<script>
+
+    function fetchMessage() {
+
+        //let username = document.getElementById("usernametxt").value;
+
+        fetch("http://localhost:8080/message").then(response => response.json()).then(message => {
+
+            document.getElementById("sender").innerHTML = message.sender;
+            document.getElementById("message").innerHTML = message.message;
+            document.getElementById("date").innerHTML = message.date;
+           
+            console.log(message)
+        })
+
+    }
+
+
+</script>
+
+</html>
