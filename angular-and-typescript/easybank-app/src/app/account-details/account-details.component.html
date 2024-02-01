@@ -1,0 +1,10 @@
+<input type="number" placeholder="Enter Account No." #accountNo>
+<button (click)="findAccountDeatils(accountNo.value)" class="btn btn-dark">Search</button>
+
+
+<div *ngIf="accountDeatils">
+    <p>Account No: {{accountDeatils?.accountNo}}</p>
+    <p>Name : {{accountDeatils?.customerName}}</p>
+    <p>Balance : {{accountDeatils?.balance}}</p>
+    <p>Created On : {{accountDeatils?.accountCreationDate}}</p>
+</div>

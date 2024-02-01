@@ -1,0 +1,16 @@
+<form method="post" (submit)="addAccount(formData.value)" #formData="ngForm">
+    <div class="form-group">
+        <label for="accountNo">Account No</label>
+        <input type="number" class="form-control" id="accountNo" name="accountNo" ngModel placeholder="Enter Account No">
+    </div>
+    <div class="form-group">
+        <label for="customerName">Customer Name</label>
+        <input type="text" ngModel class="form-control" id="customerName" name="customerName" placeholder="Enter Customer Name" required #tCustomerName>
+        <p *ngIf="!tCustomerName.value" class="text-danger">Customer Name is required</p>
+    </div>
+    <div class="form-group">
+        <label for="balance">Balance</label>
+        <input type="number" ngModel class="form-control" id="balance" name="balance" placeholder="Enter Balance">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
